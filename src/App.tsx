@@ -1,11 +1,16 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
 
 function App() {
   return (
-    <>
-      vite - router53 배포 테스트
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects/*" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
