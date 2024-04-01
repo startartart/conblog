@@ -20,6 +20,9 @@ export default function Projects() {
         <ProjectBox>4</ProjectBox>
         <ProjectBox>5</ProjectBox>
         <ProjectBox>6</ProjectBox>
+        <ProjectBox>7</ProjectBox>
+        <ProjectBox>8</ProjectBox>
+        <ProjectBox>9</ProjectBox>
       </ProjectLayout>
     </Layout>
   );
