@@ -72,11 +72,13 @@ const Title = styled.div`
 `;
 
 const LargeText = styled.h1`
+  color: #222222;
   font-size: 5rem;
 `;
 
 const SmallText = styled.h5<TextProps>`
   font-size: 2.5rem;
+  color: #222222;
   text-decoration: ${(props) =>
     props.$isInComplete ? 'line-through' : 'none'};
 `;
@@ -86,7 +88,7 @@ const Bar = styled.div<BarProps>`
   width: 20%;
   height: 8%;
   top: 46%;
-  background-color: black;
+  background-color: #222222;
   ${(props) =>
     props.$direction === 'left'
       ? {
