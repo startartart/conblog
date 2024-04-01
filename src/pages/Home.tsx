@@ -39,12 +39,7 @@ const StyleLink = styled(Link)`
   width: 100%;
   position: relative;
   text-align: center;
-  transition: color 0.5s;
-  color: black;
   user-select: none;
-  &:hover {
-    color: #bfbfbf;
-  }
 `;
 
 const Layout = styled.div`
@@ -79,6 +74,10 @@ const LargeText = styled.h1`
 const SmallText = styled.h5<TextProps>`
   font-size: 2.5rem;
   color: #222222;
+  transition: color 0.5s;
+  &:hover {
+    color: #bfbfbf;
+  }
   text-decoration: ${(props) =>
     props.$isInComplete ? 'line-through' : 'none'};
 `;
