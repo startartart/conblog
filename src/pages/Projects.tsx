@@ -7,8 +7,8 @@ type ProjectLayoutProps = {
 };
 
 type ProjectListProps = {
-  id: number[];
-  content: string[];
+  id: number;
+  content: string;
 };
 
 const ProjectList = [
