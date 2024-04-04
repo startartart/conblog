@@ -28,7 +28,7 @@ export default function Projects() {
   const navigate = useNavigate();
 
   const goProjectPage = (idx: ProjectListProps) => {
-    navigate(`/project/${idx.id}`, { state: { content: idx.content } });
+    navigate(`/project/${idx.id}`, { state: idx });
   };
 
   return (
