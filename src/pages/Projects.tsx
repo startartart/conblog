@@ -1,28 +1,52 @@
 import styled from 'styled-components';
 import useCurrentMedia from '../hooks/useCurrentMedia';
+import { useNavigate } from 'react-router-dom';
 
 type ProjectLayoutProps = {
   $count: number;
 };
 
+type ProjectListProps = {
+  id: number[];
+  content: string[];
+};
+
+const ProjectList = [
+  { id: 1, content: '프로젝트1' },
+  { id: 2, content: '프로젝트2' },
+  { id: 3, content: '프로젝트3' },
+  { id: 4, content: '프로젝트4' },
+  { id: 5, content: '프로젝트5' },
+  { id: 6, content: '프로젝트6' },
+  { id: 7, content: '프로젝트7' },
+  { id: 8, content: '프로젝트8' },
+  { id: 9, content: '프로젝트9' },
+  { id: 10, content: '프로젝트10' },
+  { id: 11, content: '프로젝트11' },
+];
+
 export default function Projects() {
   const rowValue = useCurrentMedia({ method: 'row' });
   const count = typeof rowValue === 'number' ? rowValue : 0;
+  const navigate = useNavigate();
+
+  const goProjectPage = (idx: ProjectListProps) => {
+    navigate(`/project/${idx.id}`, { state: { content: idx.content } });
+  };
+
   return (
     <Layout>
       <Title>
         <LargeText>Projects Page</LargeText>
       </Title>
       <ProjectLayout $count={count}>
-        <ProjectBox>1</ProjectBox>
-        <ProjectBox>2</ProjectBox>
-        <ProjectBox>3</ProjectBox>
-        <ProjectBox>4</ProjectBox>
-        <ProjectBox>5</ProjectBox>
-        <ProjectBox>6</ProjectBox>
-        <ProjectBox>7</ProjectBox>
-        <ProjectBox>8</ProjectBox>
-        <ProjectBox>9</ProjectBox>
+        {ProjectList.map((idx) => {
+          return (
+            <ProjectBox key={idx.id} onClick={() => goProjectPage(idx)}>
+              {idx.content}
+            </ProjectBox>
+          );
+        })}
       </ProjectLayout>
     </Layout>
   );
