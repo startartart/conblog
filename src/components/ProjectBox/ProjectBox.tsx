@@ -12,6 +12,7 @@ const Box = styled.li`
   width: 100%;
   height: 15rem;
   border: 1px solid;
+  cursor: pointer;
   &:hover {
     background-color: #f2f2f2;
   }
