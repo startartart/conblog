@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 import useCurrentMedia from '../hooks/useCurrentMedia';
 import { useNavigate } from 'react-router-dom';
+import ProjectBox from '../components/ProjectBox/ProjectBox';
+import { ProjectListProps } from '../components/ProjectBox/ProjectBox.types';
 
 type ProjectLayoutProps = {
   $count: number;
-};
-
-type ProjectListProps = {
-  id: number;
-  content: string;
 };
 
 const ProjectList = [
@@ -41,11 +38,7 @@ export default function Projects() {
       </Title>
       <ProjectLayout $count={count}>
         {ProjectList.map((idx) => {
-          return (
-            <ProjectBox key={idx.id} onClick={() => goProjectPage(idx)}>
-              {idx.content}
-            </ProjectBox>
-          );
+          return <ProjectBox key={idx.id} onClick={goProjectPage} idx={idx} />;
         })}
       </ProjectLayout>
     </Layout>
@@ -80,13 +73,4 @@ const ProjectLayout = styled.ul<ProjectLayoutProps>`
         calc(${(props) => props.$count - 1}) / ${(props) => props.$count}
     )
   );
-`;
-
-const ProjectBox = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 15rem;
-  border: 1px solid;
 `;
