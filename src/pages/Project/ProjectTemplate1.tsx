@@ -43,7 +43,6 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 3rem 0;
 `;
 
 const BoxWrapper = styled.div`
