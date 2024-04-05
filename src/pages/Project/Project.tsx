@@ -29,7 +29,7 @@ export default function Project() {
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  padding: 2rem 0;
   gap: 3rem;
 `;
 
