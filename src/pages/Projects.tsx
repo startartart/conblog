@@ -31,7 +31,7 @@ export default function Projects() {
   const goProjectPage = (idx: ProjectListProps) => {
     navigate(`/project/${idx.id}`, { state: idx });
   };
-
+  
   return (
     <Layout>
       <Title>

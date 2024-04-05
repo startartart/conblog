@@ -41,5 +41,6 @@ export default function useCurrentMedia({
     if (isMiddleDesktop) return '660px';
     if (isHugeDesktop) return '930px';
   }
+
   return 0;
 }
