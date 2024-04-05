@@ -33,5 +33,14 @@ export default function useCurrentMedia({
     if (isMiddleDesktop) return '1420px';
     if (isHugeDesktop) return '1880px';
   }
+
+  if (method === 'template') {
+    if (isMobile) return '100%';
+    if (isTablet) return '356px';
+    if (isDesktop) return '500px';
+    if (isMiddleDesktop) return '660px';
+    if (isHugeDesktop) return '930px';
+  }
+
   return 0;
 }
