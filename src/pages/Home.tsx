@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Arrow from '../assets/arrow.svg?react';
 
 type TextProps = {
   $isInComplete?: boolean;
@@ -10,6 +12,8 @@ type BarProps = {
 };
 
 export default function Home() {
+  // const [folded, setFolded] = useState(false);
+
   return (
     <Layout>
       <Title>
@@ -30,6 +34,10 @@ export default function Home() {
           <SmallText $isInComplete={true}>Posts</SmallText>
         </StyleLink>
       </Box>
+      <Footer>
+        <SlideArrow fill="#bfbfbf" />
+        <SmallText>Slide it!</SmallText>
+      </Footer>
     </Layout>
   );
 }
@@ -94,4 +102,25 @@ const Bar = styled.div<BarProps>`
           left: '-50%',
         }
       : { right: '-50%' }}
+`;
+
+const Footer = styled.div`
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  top: 75%;
+  width: 100%;
+  height: 100%;
+`;
+
+const SlideArrow = styled(Arrow)`
+  width: 100%;
+  height: 15%;
+  transition: all 1s;
+  transform: translateY(0px);
+  &:hover {
+    transform: translateY(-20px);
+  }
 `;
