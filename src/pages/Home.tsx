@@ -94,7 +94,7 @@ const StyleLink = styled(Link)`
   width: 100%;
   position: relative;
   text-align: center;
-  /* user-select: none; */
+  user-select: none;
 `;
 
 const HomeLayout = styled.div`
