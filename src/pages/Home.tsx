@@ -2,10 +2,7 @@ import styled from 'styled-components';
 // import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Arrow from '../assets/arrow.svg?react';
-
-type TextProps = {
-  $isInComplete?: boolean;
-};
+import Text from '../components/Text/Text';
 
 type BarProps = {
   $direction: 'left' | 'right';
@@ -17,26 +14,36 @@ export default function Home() {
   return (
     <Layout>
       <Title>
-        <LargeText>Home</LargeText>
+        <Text $fontSize="5rem" $color="#222222">
+          Home
+        </Text>
       </Title>
       <Box>
         <StyleLink to="projects">
           <Bar $direction="left" />
           <Bar $direction="right" />
-          <SmallText>Projects</SmallText>
+          <Text $fontSize="2.5rem" $color="#222222" $hoverColor="#bfbfbf">
+            Projects
+          </Text>
         </StyleLink>
         <StyleLink to="https://github.com/startartart">
           <Bar $direction="left" />
           <Bar $direction="right" />
-          <SmallText>Github</SmallText>
+          <Text $fontSize="2.5rem" $color="#222222" $hoverColor="#bfbfbf">
+            Github
+          </Text>
         </StyleLink>
         <StyleLink to="/">
-          <SmallText $isInComplete={true}>Posts</SmallText>
+          <Text $fontSize="2.5rem" $color="#222222" $isInActive={true}>
+            Posts
+          </Text>
         </StyleLink>
       </Box>
       <Footer>
         <SlideArrow fill="#bfbfbf" />
-        <SmallText>Slide it!</SmallText>
+        <Text $fontSize="1.5rem" $color="#bfbfbf">
+          Slide it!
+        </Text>
       </Footer>
     </Layout>
   );
@@ -74,22 +81,6 @@ const Title = styled.div`
   top: 20%;
 `;
 
-const LargeText = styled.h1`
-  color: #222222;
-  font-size: 5rem;
-`;
-
-const SmallText = styled.h5<TextProps>`
-  font-size: 2.5rem;
-  color: #222222;
-  transition: color 0.5s;
-  &:hover {
-    color: #bfbfbf;
-  }
-  text-decoration: ${(props) =>
-    props.$isInComplete ? 'line-through' : 'none'};
-`;
-
 const Bar = styled.div<BarProps>`
   position: absolute;
   width: 20%;
@@ -109,7 +100,6 @@ const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   top: 75%;
   width: 100%;
   height: 100%;
