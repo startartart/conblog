@@ -42,5 +42,10 @@ export default function useCurrentMedia({
     if (isHugeDesktop) return '930px';
   }
 
+  if (method === 'device') {
+    if (isMobile || isTablet) return 'mobile';
+    if (isDesktop || isMiddleDesktop || isHugeDesktop) return 'desktop';
+  }
+
   return 0;
 }
