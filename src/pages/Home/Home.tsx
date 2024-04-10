@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Text from '../components/Text/Text';
-import Footer from '../components/Footer/Footer';
+import Text from '../../components/Text/Text';
+import Footer from '../../components/Footer/Footer';
+import Info from './Info';
 
 type BarProps = {
   $direction: 'left' | 'right';
@@ -81,7 +82,7 @@ export default function Home() {
         $color="#f2f2f2"
         $current={'layout2' === current}
       >
-        Introduce
+        <Info $current={'layout2' === current}/>
       </Layout>
 
       <Footer $show={'layout1' === current} />
