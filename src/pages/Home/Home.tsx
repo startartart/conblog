@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Text from '../components/Text/Text';
-import Footer from '../components/Footer/Footer';
+import Text from '../../components/Text/Text';
+import Footer from '../../components/Footer/Footer';
+import Info from './Info';
 
 type BarProps = {
   $direction: 'left' | 'right';
@@ -11,6 +12,7 @@ type BarProps = {
 type LayoutProps = {
   $color: string;
   $current?: boolean;
+  $flexDirection?: 'column' | 'row';
 };
 
 export default function Home() {
@@ -80,8 +82,9 @@ export default function Home() {
         className="layout"
         $color="#f2f2f2"
         $current={'layout2' === current}
+        $flexDirection="row"
       >
-        Introduce
+        <Info $current={'layout2' === current} />
       </Layout>
 
       <Footer $show={'layout1' === current} />
@@ -108,7 +111,7 @@ const Layout = styled.div<LayoutProps>`
   transition: all 0.5s ease-out;
   position: relative;
   gap: 1rem;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.$flexDirection ? 'row' : 'column')};
   justify-content: center;
   align-items: center;
   z-index: 1;
