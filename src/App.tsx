@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Projects from './pages/Projects';
 import Project from './pages/Project/Project';
 import { Reset } from 'styled-reset';
