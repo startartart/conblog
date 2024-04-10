@@ -44,6 +44,7 @@ const Layout = styled.div<FooterProps>`
     }
     100% {
       opacity: 0;
+      z-index: 0;
     }
   }
 
