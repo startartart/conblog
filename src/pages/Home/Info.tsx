@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import Text from '../../components/Text/Text';
 import './info.css';
+import { Introduce1, Introduce2, Introduce3, Introduce4 } from './index';
 
 type InfoProps = {
   $current?: boolean;
   $vertical?: 'top' | 'bottom';
   $horizontal?: 'left' | 'right';
-  $navigating?: boolean;
 };
 
 export default function Info({ $current }: InfoProps) {
@@ -57,7 +57,11 @@ export default function Info({ $current }: InfoProps) {
           <Text $fontSize="2rem"></Text>
         </Circle>
       </Layout>
-      {box === 1 && <Text>hello</Text>}
+
+      {box === 1 && <Introduce1 />}
+      {box === 2 && <Introduce2 />}
+      {box === 3 && <Introduce3 />}
+      {box === 4 && <Introduce4 />}
     </>
   );
 }
