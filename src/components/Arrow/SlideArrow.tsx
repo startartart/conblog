@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import Arrow from '../../assets/arrow.svg?react';
+import ArrowSvg from '../../assets/arrow.svg?react';
 import { SlideArrowProps } from './Arrow.types';
 
 export default function SlideArrow({
@@ -25,7 +25,7 @@ const ArrowBox = styled.div<SlideArrowProps>`
   transform: ${(props) => (props.$reverse ? 'scaleY(-1)' : 'none')};
 `;
 
-const StyledArrow = styled(Arrow)<SlideArrowProps>`
+const StyledArrow = styled(ArrowSvg)<SlideArrowProps>`
   width: 100%;
   height: 100%;
   position: relative;
