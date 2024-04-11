@@ -1,21 +1,38 @@
-// import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import HomeSvg from '../../assets/home.svg?react';
+import SearchSvg from '../../assets/search.svg?react';
+import { HeaderProps } from './Header.types';
 
-// export default function Header() {
-//   return (
-//     <HeaderLayout>
-//       <Title></Title>
+export default function Header({ title, location = '/' }: HeaderProps) {
+  const navigate = useNavigate();
+  return (
+    <HeaderLayout>
+      <Title>{title}</Title>
+      <OptionBox>
+        <SearchSvg width={'2.5rem'} onClick={() => navigate('/search')} />
+        <HomeSvg width={'2.5rem'} onClick={() => navigate(location)} />
+      </OptionBox>
+    </HeaderLayout>
+  );
+}
 
-//     </HeaderLayout>
-//   );
-// }
+const HeaderLayout = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-// const HeaderLayout = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 0 2rem;
-// `;
+  width: 100%;
+  padding: 2rem 0;
+`;
 
-// const Title = styled.h1`
-//   font-size: 3rem;
-// `;
+const OptionBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+`;

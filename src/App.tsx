@@ -3,6 +3,7 @@ import Home from './pages/Home/Home';
 import Projects from './pages/Projects';
 import Project from './pages/Project/Project';
 import Posts from './pages/Posts';
+import Post from './pages/Post/Post';
 import { Reset } from 'styled-reset';
 import styled from 'styled-components';
 import useCurrentMedia from './hooks/useCurrentMedia';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/*" element={<Project />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/post/*" element={<Post />} />
         </Routes>
       </Display>
     </BrowserRouter>
