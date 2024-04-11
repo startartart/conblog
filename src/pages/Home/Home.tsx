@@ -68,10 +68,10 @@ export default function Home() {
               Github
             </Text>
           </StyleLink>
-          <StyleLink to="/">
+          <StyleLink to="/posts">
             <Bar $direction="left" />
             <Bar $direction="right" />
-            <Text $fontSize="2.5rem" $color="#222222" $isInActive={true}>
+            <Text $fontSize="2.5rem" $color="#222222" $hoverColor="#bfbfbf">
               Posts
             </Text>
           </StyleLink>
