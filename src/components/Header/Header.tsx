@@ -30,9 +30,11 @@ const OptionBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
   gap: 1rem;
 `;
 
 const Title = styled.h1`
   font-size: 3rem;
+  margin: 0 2rem;
 `;
