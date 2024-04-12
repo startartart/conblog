@@ -5,5 +5,7 @@ export type Props = {
   $color?: string;
   $hoverColor?: string;
   $isInActive?: boolean;
+  $lineHeight?: number;
+  $margin?: string;
   children?: ReactNode;
 };
