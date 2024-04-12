@@ -67,6 +67,7 @@ export default function Home() {
             <Text $fontSize="2.5rem" $color="#222222" $hoverColor="#bfbfbf">
               Github
             </Text>
+          </StyleLink>
           <StyleLink to="/posts">
             <Bar $direction="left" />
             <Bar $direction="right" />
