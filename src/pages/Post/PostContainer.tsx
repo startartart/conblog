@@ -9,22 +9,33 @@ export default function PostContainer({
   author,
   date,
   tags,
+  isPhone,
   titleImage,
   onClick,
 }: PostContainerProps) {
+  const [f1, f2, f3] = isPhone
+    ? ['1.375rem', '1.125rem', '1rem']
+    : ['1.5rem', '1.25rem', '1rem'];
+
   return (
     <Container onClick={() => onClick(id, fileName, title)}>
-      <ContentContainer>
-        <Text $fontSize="1.5rem">{title}</Text>
+      <ContentContainer $isPhone={isPhone}>
+        <Text $fontSize={f1} $lineHeight={1.15}>
+          {title}
+        </Text>
         <ContentBottomContainer>
           <ContentBottomRowContainer>
-            <Text $fontSize="1.25rem">author: {author}</Text>
-            <Text $fontSize="1.25rem">date: {date}</Text>
+            <Text $fontSize={f3} $color="#8c8c8c" $margin="1rem">
+              author - {author}
+            </Text>
+            <Text $fontSize={f3} $color="#8c8c8c">
+              date: {date}
+            </Text>
           </ContentBottomRowContainer>
           <ContentBottomRowContainer>
             {tags?.map((tag, id) => {
               return (
-                <Text key={id} $fontSize="1rem">
+                <Text key={id} $fontSize={f2} $color="#262626" $margin={f3}>
                   #{tag}
                 </Text>
               );
@@ -32,7 +43,9 @@ export default function PostContainer({
           </ContentBottomRowContainer>
         </ContentBottomContainer>
       </ContentContainer>
-      <ImageContainer>{titleImage === 'none' && 'None'}</ImageContainer>
+      {!isPhone && (
+        <ImageContainer>{titleImage === 'none' && 'None'}</ImageContainer>
+      )}
     </Container>
   );
 }
@@ -43,22 +56,30 @@ const Container = styled.div`
   height: 10rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.01);
+  }
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.div<{ $isPhone: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 70%;
+  width: ${(props) => (props.$isPhone ? '100%' : '70%')};
   border-right: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 2%;
+  padding: ${(props) => (props.$isPhone ? '1rem' : '2%')};
 `;
 
 const ContentBottomContainer = styled.div``;
 
 const ContentBottomRowContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`

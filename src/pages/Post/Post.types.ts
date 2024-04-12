@@ -5,6 +5,7 @@ export type PostContainerProps = {
   author: string;
   date: string;
   tags: string[];
+  isPhone: boolean;
   titleImage?: string;
   onClick: (id: number, fileName: string, title: string) => void;
 };
