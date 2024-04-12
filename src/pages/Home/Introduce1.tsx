@@ -1,10 +1,10 @@
 import Text from '../../components/Text/Text';
 import styled from 'styled-components';
 import useCurrentMedia from '../../hooks/useCurrentMedia';
-import Email from '../../assets/email.svg?react';
-import Code from '../../assets/code.svg?react';
-import Layer from '../../assets/layer.svg?react';
-import Human from '../../assets/human.svg?react';
+import EmailSvg from '../../assets/email.svg?react';
+import CodeSvg from '../../assets/code.svg?react';
+import LayerSvg from '../../assets/layer.svg?react';
+import HumanSvg from '../../assets/human.svg?react';
 
 type Intro = {
   $img?: string;
@@ -18,28 +18,28 @@ export default function Introduce1() {
     <>
       <Layout>
         <ContentBox>
-          <Human width={'2rem'} />
+          <HumanSvg width={'2rem'} />
           <Text $fontSize="2rem" $color="#222222">
             박병권 | 1999. 03. 04
           </Text>
         </ContentBox>
 
         <ContentBox>
-          <Layer width={'2rem'} />
+          <LayerSvg width={'2rem'} />
           <Text $fontSize="2rem" $color="#222222">
             Frontend Developer
           </Text>
         </ContentBox>
 
         <ContentBox>
-          <Code width={'2rem'} />
+          <CodeSvg width={'2rem'} />
           <Text $fontSize="2rem" $color="#222222">
             JS React Cpp Python
           </Text>
         </ContentBox>
 
         <ContentBox>
-          <Email width={'2rem'} />
+          <EmailSvg width={'2rem'} />
           <Text $fontSize="2rem" $color="#222222">
             startartart@naver.com
           </Text>
