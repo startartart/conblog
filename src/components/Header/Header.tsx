@@ -16,6 +16,7 @@ export default function Header({ title, location = '/' }: HeaderProps) {
         <SearchSvg
           style={{ cursor: 'pointer' }}
           width={'2.5rem'}
+          fill={'#060606'}
           onClick={() => navigate('/search')}
         />
         <HomeSvg
