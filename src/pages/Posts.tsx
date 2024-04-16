@@ -4,6 +4,7 @@ import PostContainer from './Post/\bPostContainer';
 import { PostData } from '../data/PostData';
 import { useNavigate } from 'react-router-dom';
 import { countTags } from '../utils/countTags';
+import UpArrow from '../components/Arrow/UpArrow';
 import useCurrentMedia from '../hooks/useCurrentMedia';
 
 export default function Posts() {
@@ -17,6 +18,10 @@ export default function Posts() {
     navigate(`/post/${title}`, { state: [id, fileName, title] });
   };
 
+  const goSearchPage = (tag: string) => {
+    navigate(`/search/${tag}`);
+  };
+
   return (
     <Layout>
       <Header title="Posts" />
@@ -24,7 +29,7 @@ export default function Posts() {
         {!isPhone && (
           <TagsLayout>
             {Object.keys(tags).map((tag) => (
-              <Tag key={tag}>
+              <Tag key={tag} onClick={() => goSearchPage(tag)}>
                 {tag} ({tags[tag]})
               </Tag>
             ))}
@@ -50,6 +55,7 @@ export default function Posts() {
           })}
         </PostContentLayout>
       </MainLayout>
+      <UpArrow />
     </Layout>
   );
 }
@@ -57,6 +63,7 @@ export default function Posts() {
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #f9f9f9;
 `;
 
 const MainLayout = styled.div`
@@ -67,6 +74,7 @@ const MainLayout = styled.div`
 const TagsLayout = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 15%;
   padding: 1rem;
   gap: 1rem;

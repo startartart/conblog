@@ -44,7 +44,9 @@ export default function PostContainer({
         </ContentBottomContainer>
       </ContentContainer>
       {!isPhone && (
-        <ImageContainer>{titleImage === 'none' && 'None'}</ImageContainer>
+        <ImageContainer>
+          {titleImage === 'none' ? 'None' : <Image src={titleImage} />}
+        </ImageContainer>
       )}
     </Container>
   );
@@ -54,9 +56,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 10rem;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
   cursor: pointer;
   transition: transform 0.3s ease;
 
@@ -87,4 +89,11 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 `;
