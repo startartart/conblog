@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Header from '../components/Header/Header';
-import PostContainer from './Post/\bPostContainer';
+import PostContainer from './Post/PostContainer';
 import { PostData } from '../data/PostData';
 import { useNavigate } from 'react-router-dom';
 import { countTags } from '../utils/countTags';
@@ -19,7 +19,7 @@ export default function Posts() {
   };
 
   const goSearchPage = (tag: string) => {
-    navigate(`/search/${tag}`);
+    navigate(`/search?q=${tag}`, { state: tag });
   };
 
   return (
