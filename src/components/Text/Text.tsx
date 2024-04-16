@@ -6,6 +6,8 @@ export default function Text({
   $color = '#222222',
   $hoverColor,
   $isInActive,
+  $lineHeight = 1,
+  $margin = '0',
   children,
 }: Props) {
   return (
@@ -14,6 +16,8 @@ export default function Text({
       $color={$color}
       $hoverColor={$hoverColor}
       $isInActive={$isInActive}
+      $lineHeight={$lineHeight}
+      $margin={$margin}
     >
       {children}
     </StyledText>
@@ -25,6 +29,9 @@ const StyledText = styled.p<Props>`
   color: ${(props) => props.$color};
   text-decoration: ${(props) => (props.$isInActive ? 'line-through' : 'none')};
   transition: color 0.5s;
+  line-height: ${(props) => props.$lineHeight};
+
+  margin-right: ${(props) => props.$margin};
   &:hover {
     color: ${(props) => props.$hoverColor};
   }

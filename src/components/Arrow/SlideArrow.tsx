@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import ArrowSvg from '../../assets/arrow.svg?react';
+import ArrowSvg from '../../assets/double-arrow.svg?react';
 import { SlideArrowProps } from './Arrow.types';
 
 export default function SlideArrow({
